@@ -1,0 +1,39 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+}
+
+.calendar-container {
+    perspective: 1000px; /* Добавляем перспективу для 3D эффекта */
+}
+
+.calendar {
+    width: 200px;
+    height: 300px;
+    position: relative;
+    transform-style: preserve-3d; /* Сохраняем 3D стиль */
+    transition: transform 1s; /* Добавляем анимацию */
+}
+
+.calendar .front,
+.calendar .back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden; /* Скрываем заднюю сторону при развороте */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 36px;
+    color: white;
+}
+
+.calendar .front {
+    background-color: #3f51b5; /* Цвет передней стороны */
+}
